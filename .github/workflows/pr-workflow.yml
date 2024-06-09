@@ -37,3 +37,27 @@ jobs:
 
       - name: Run Tests
         run: dotnet test --configuration Release --no-restore --verbosity normal
+
+      - name: Bump version and push tag
+        id: tag_version
+        uses: mathieudutour/github-tag-action@v6.2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          dry_run: true
+
+      - name: Update .csproj version
+        run: |
+          VERSION=${{ steps.tag_version.outputs.new_tag }}
+          echo "Updating .csproj files to version $VERSION"
+          for csproj in $(find . -name "*.csproj"); do
+            echo "Processing $csproj"
+            sed -i "s/<Version>.*<\/Version>/<Version>$VERSION<\/Version>/g" $csproj
+          done
+
+      - name: Commit .csproj version changes
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+          git add -u
+          git commit -m "Update .csproj versions to $VERSION"
+          git push origin HEAD

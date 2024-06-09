@@ -42,23 +42,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Update .csproj version
-        run: |
-          VERSION=${{ steps.tag_version.outputs.new_tag }}
-          echo "Updating .csproj files to version $VERSION"
-          for csproj in $(find . -name "*.csproj"); do
-            echo "Processing $csproj"
-            sed -i "s/<Version>.*<\/Version>/<Version>$VERSION<\/Version>/g" $csproj
-          done
-
-      - name: Commit .csproj version changes
-        run: |
-          git config --global user.name 'github-actions'
-          git config --global user.email 'github-actions@github.com'
-          git add -u
-          git commit -m "Update .csproj versions to $VERSION"
-          git push origin HEAD
-
       - name: Create a GitHub release
         uses: ncipollo/release-action@v1
         with:
