@@ -48,11 +48,9 @@ jobs:
 
       - name: Update .csproj version
         run: |
-          VERSION=${{ steps.tag_version.outputs.new_version }}
-          echo "Updating .csproj files to version $VERSION"
           for csproj in $(find . -name "*.csproj"); do
             echo "Processing $csproj"
-            sed -i "s/<Version>.*<\/Version>/<Version>$VERSION<\/Version>/g" $csproj
+            sed -i "s/<Version>.*<\/Version>/<Version>${{ steps.tag_version.outputs.new_version }}<\/Version>/g" $csproj
           done
 
       - name: Commit .csproj version changes
