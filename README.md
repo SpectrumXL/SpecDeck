@@ -1,6 +1,6 @@
-﻿# Spectrum
+﻿# SpecDeck
 
-Spectrum is a .NET library designed to simplify the implementation of the Specification pattern. It aims to provide an intuitive and minimalistic approach to defining and applying specifications in your applications, ensuring clean and maintainable code.
+SpecDeck is a .NET library designed to simplify the implementation of the Specification pattern. It aims to provide an intuitive and minimalistic approach to defining and applying specifications in your applications, ensuring clean and maintainable code.
 
 ## Key Features
 
@@ -12,14 +12,14 @@ Spectrum is a .NET library designed to simplify the implementation of the Specif
 
 ## How it Works
 
-Spectrum allows you to encapsulate query logic into reusable specifications, promoting clean architecture and separation of concerns. By leveraging the Specification pattern, you can create highly readable and maintainable data access layers.
+SpecDeck allows you to encapsulate query logic into reusable specifications, promoting clean architecture and separation of concerns. By leveraging the Specification pattern, you can create highly readable and maintainable data access layers.
 
 ## Installation
 
-To install Spectrum, add the following package to your .NET project:
+To install SpecDeck, add the following package to your .NET project:
 
 ```sh
-dotnet add package Spectrum
+dotnet add package SpecDeck
 ```
 
 ## Usage
