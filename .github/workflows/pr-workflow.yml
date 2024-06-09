@@ -10,6 +10,7 @@ on:
 
 jobs:
   build:
+    permissions: write-all
     runs-on: ubuntu-latest
 
     steps:
@@ -47,7 +48,7 @@ jobs:
 
       - name: Update .csproj version
         run: |
-          VERSION=${{ steps.tag_version.outputs.new_tag }}
+          VERSION=${{ steps.tag_version.outputs.new_version }}
           echo "Updating .csproj files to version $VERSION"
           for csproj in $(find . -name "*.csproj"); do
             echo "Processing $csproj"
