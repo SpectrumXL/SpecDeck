@@ -1,24 +1,24 @@
-# Spectrum Example Library
+# SpecDeck Example Library
 
 ## Overview
 
-This example demonstrates the use of the `Spectrum` library to generate specifications for entities using source
+This example demonstrates the use of the `SpecDeck` library to generate specifications for entities using source
 generators. The library simplifies the creation and application of specifications to filter collections of entities
 or access to persistence via ORMs or any other kind of adapter which works with ExpressionTrees.
 
 ## Installation
 
-To use the Spectrum library with source generators, follow these steps:
+To use the SpecDeck library with source generators, follow these steps:
 
 1. **Install the NuGet package** in your target project:
    ```sh
-   dotnet add package YourLibraryName
+   dotnet add package SpecDeck
    ```
-2. **Define an entity class and mark it with the `SpectrumSpec` attribute**:
+2. **Define an entity class and mark it with the `SpecDeckSpec` attribute**:
    ```csharp
-   namespace Spectrum.Example;
+   namespace SpecDeck.Example;
    
-    [SpectrumSpec]
+    [SpecDeckSpec]
     public class Customer
     {
         public int Id { get; set; }
@@ -38,7 +38,7 @@ To use the Spectrum library with source generators, follow these steps:
 
 1. **Generated Specification Classes**:
     - The specification classes are automatically generated for each public property of the entity class marked with
-      the `SpectrumSpec` attribute.
+      the `SpecDeckSpec` attribute.
     - Each generated class will be named using the pattern `By{PropertyName}Spec`.
     - These classes will inherit from `Specification<T>` and implement the `ToExpression` method to provide the
       filtering
@@ -69,17 +69,17 @@ Generate specification classes for filtering `Customer` entities:
 #### ByEmailSpec
 
    ```csharp
-   using Spectrum.Core;
+   using SpecDeck.Core;
    using System.Linq.Expressions;
-   using Spectrum.Example;
+   using SpecDeck.Example;
    
-   namespace Spectrum.Example.Specs.Customer
+   namespace SpecDeck.Example.Specs.Customer
    {
-       public class ByEmailSpec(string v) : Specification<Spectrum.Example.Customer>
+       public class ByEmailSpec(string v) : Specification<SpecDeck.Example.Customer>
        {
            private readonly string _v = v;
    
-           public override Expression<Func<Spectrum.Example.Customer, bool>> ToExpression()
+           public override Expression<Func<SpecDeck.Example.Customer, bool>> ToExpression()
                => (t => t.Email.Equals(_v));
        }
    }
@@ -88,17 +88,17 @@ Generate specification classes for filtering `Customer` entities:
 #### ByIdSpec
 
    ```csharp
-   using Spectrum.Core;
+   using SpecDeck.Core;
    using System.Linq.Expressions;
-   using Spectrum.Example;
+   using SpecDeck.Example;
    
-   namespace Spectrum.Example.Specs.Customer
+   namespace SpecDeck.Example.Specs.Customer
    {
-       public class ByIdSpec(int v) : Specification<Spectrum.Example.Customer>
+       public class ByIdSpec(int v) : Specification<SpecDeck.Example.Customer>
        {
            private readonly int _v = v;
    
-           public override Expression<Func<Spectrum.Example.Customer, bool>> ToExpression()
+           public override Expression<Func<SpecDeck.Example.Customer, bool>> ToExpression()
                => (t => t.Id.Equals(_v));
        }
    }
@@ -107,17 +107,17 @@ Generate specification classes for filtering `Customer` entities:
 #### ByNameSpec
 
    ```csharp
-   using Spectrum.Core;
+   using SpecDeck.Core;
    using System.Linq.Expressions;
-   using Spectrum.Example;
+   using SpecDeck.Example;
    
-   namespace Spectrum.Example.Specs.Customer
+   namespace SpecDeck.Example.Specs.Customer
    {
-       public class ByNameSpec(string v) : Specification<Spectrum.Example.Customer>
+       public class ByNameSpec(string v) : Specification<SpecDeck.Example.Customer>
        {
            private readonly string _v = v;
    
-           public override Expression<Func<Spectrum.Example.Customer, bool>> ToExpression()
+           public override Expression<Func<SpecDeck.Example.Customer, bool>> ToExpression()
                => (t => t.Name.Equals(_v));
        }
    }
@@ -128,14 +128,14 @@ Generate specification classes for filtering `Customer` entities:
 Provide methods to easily create specification instances:
    
    ```csharp
-   using Spectrum.Core;
+   using SpecDeck.Core;
    using System.Linq.Expressions;
    
-   namespace Spectrum.Example.Specs.Customer
+   namespace SpecDeck.Example.Specs.Customer
    {
        public static class CustomerSpecs
        {
-           public static Specification<Spectrum.Example.Customer> All<T>() => Specification<Spectrum.Example.Customer>.True;
+           public static Specification<SpecDeck.Example.Customer> All<T>() => Specification<SpecDeck.Example.Customer>.True;
    
            public static ByIdSpec ByIdSpec(int v) => new(v);
            public static ByNameSpec ByNameSpec(string v) => new(v);
@@ -147,6 +147,6 @@ Provide methods to easily create specification instances:
 
 ## Conclusion
 
-This example demonstrates how to use the Spectrum library to create and apply specifications for filtering entities. By
+This example demonstrates how to use the SpecDeck library to create and apply specifications for filtering entities. By
 using source generators, the library simplifies the creation of specifications and ensures that the code remains clean
 and maintainable.
