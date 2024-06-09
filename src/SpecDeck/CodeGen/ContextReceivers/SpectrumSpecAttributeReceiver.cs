@@ -2,17 +2,17 @@
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
-namespace Spectrum.CodeGen.ContextReceivers
+namespace SpecDeck.CodeGen.ContextReceivers
 {
     /// <summary>
-    /// A syntax context receiver that collects entities marked with the SpectrumSpec attribute.
+    /// A syntax context receiver that collects entities marked with the SpecDeckSpec attribute.
     /// </summary>
-    internal class SpectrumSpecAttributeReceiver : ISyntaxContextReceiver
+    internal class SpecDeckSpecAttributeReceiver : ISyntaxContextReceiver
     {
         /// <summary>
-        /// Gets the list of entities marked with the SpectrumSpec attribute.
+        /// Gets the list of entities marked with the SpecDeckSpec attribute.
         /// </summary>
-        public List<INamedTypeSymbol> SpectrumEntities { get; } = new List<INamedTypeSymbol>();
+        public List<INamedTypeSymbol> SpecDeckEntities { get; } = new List<INamedTypeSymbol>();
 
         /// <summary>
         /// Called when the generator visits a syntax node.
@@ -28,7 +28,7 @@ namespace Spectrum.CodeGen.ContextReceivers
 
             var containsSpecAttribute = classDeclaration.AttributeLists
                 .SelectMany(al => al.Attributes)
-                .Any(ad => ad.Name.ToString() == "SpectrumSpec");
+                .Any(ad => ad.Name.ToString() == "SpecDeckSpec");
 
             if (!containsSpecAttribute)
             {
@@ -38,7 +38,7 @@ namespace Spectrum.CodeGen.ContextReceivers
             var namedTypeSymbol = context.SemanticModel.GetDeclaredSymbol(classDeclaration);
             if (namedTypeSymbol != null)
             {
-                SpectrumEntities.Add(namedTypeSymbol);
+                SpecDeckEntities.Add(namedTypeSymbol);
             }
         }
     }

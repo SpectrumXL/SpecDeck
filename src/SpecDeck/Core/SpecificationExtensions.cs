@@ -1,4 +1,4 @@
-﻿namespace Spectrum.Core
+﻿namespace SpecDeck.Core
 {
     /// <summary>
     /// Provides extension methods for working with specifications.

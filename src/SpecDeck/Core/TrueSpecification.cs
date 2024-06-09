@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace Spectrum.Core
+namespace SpecDeck.Core
 {
     /// <summary>
     /// A specification that always evaluates to true.

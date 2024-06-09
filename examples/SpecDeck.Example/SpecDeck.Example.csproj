@@ -6,12 +6,10 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+        <RootNamespace>Spectrum.Example</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference 
-              Include="..\..\src\Spectrum\Spectrum.csproj"
-              OutputItemType="Analyzer"
-              ReferenceOutputAssembly="true"/>
+      <ProjectReference Include="..\..\src\SpecDeck\SpecDeck.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="true" />
     </ItemGroup>
 </Project>

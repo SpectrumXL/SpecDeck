@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace Spectrum.Core
+namespace SpecDeck.Core
 {
     /// <summary>
     /// Rebinds parameters in expressions to new parameters.

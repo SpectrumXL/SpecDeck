@@ -1,6 +1,6 @@
-﻿namespace Spectrum.Example;
+﻿namespace SpecDeck.Example;
 
-[SpectrumSpec]
+[SpecDeckSpec]
 public class Customer
 {
     public int Id { get; set; }

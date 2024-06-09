@@ -1,4 +1,4 @@
-﻿namespace Spectrum.CodeGen
+﻿namespace SpecDeck.CodeGen
 {
     /// <summary>
     /// Descriptor for generated specifications.

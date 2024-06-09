@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace Spectrum.Core
+namespace SpecDeck.Core
 {
     /// <summary>
     /// Provides extension methods for combining expressions.
