@@ -21,16 +21,16 @@ jobs:
         run: echo "RELEASE_VERSION=$(echo ${GITHUB_REF#refs/tags/} | cut -c 2-)" >> $GITHUB_ENV
 
       - name: Restore dependencies
-        run: dotnet restore ./src/Spectrum/Spectrum.csproj
+        run: dotnet restore ./src/SpecDeck/SpecDeck.csproj
 
       - name: Build
-        run: dotnet build ./src/Spectrum/Spectrum.csproj --configuration Release --no-restore
+        run: dotnet build ./src/SpecDeck/SpecDeck.csproj --configuration Release --no-restore
 
       - name: Test
-        run: dotnet test ./src/Spectrum/Spectrum.csproj --no-restore --verbosity normal
+        run: dotnet test ./src/SpecDeck/SpecDeck.csproj --no-restore --verbosity normal
 
       - name: Pack
-        run: dotnet pack ./src/Spectrum/Spectrum.csproj --configuration Release --no-build --output nupkgs /p:PackageVersion=${{ env.RELEASE_VERSION }}
+        run: dotnet pack ./src/SpecDeck/SpecDeck.csproj --configuration Release --no-build --output nupkgs /p:PackageVersion=${{ env.RELEASE_VERSION }}
 
       - name: Push to NuGet
         run: dotnet nuget push "nupkgs/**/*.nupkg" --api-key ${{ secrets.NUGET_API_KEY }} --skip-duplicate --source https://api.nuget.org/v3/index.json

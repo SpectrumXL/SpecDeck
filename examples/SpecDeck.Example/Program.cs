@@ -1,5 +1,5 @@
-﻿using Spectrum.Example;
-using Spectrum.Example.Specs.Customer;
+﻿using SpecDeck.Example;
+using SpecDeck.Example.Specs.Customer;
 
 var customers = new List<Customer>()
 {

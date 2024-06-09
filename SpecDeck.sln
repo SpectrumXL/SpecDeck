@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3B5BAA82-0CB4-44CA-9BA6-6B1D5AD22E9C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spectrum", "src\Spectrum\Spectrum.csproj", "{D7725CDA-1D0E-460A-91CF-A72ED5DD2D94}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecDeck", "src\SpecDeck\SpecDeck.csproj", "{D7725CDA-1D0E-460A-91CF-A72ED5DD2D94}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solutions Items", "Solutions Items", "{C46BFD1E-F3FD-42E3-B359-EECD7E2F7D82}"
 	ProjectSection(SolutionItems) = preProject
@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solutions Items", "Solution
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{15FC22A5-6123-47EB-A852-FB75EDDDA880}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spectrum.Example", "examples\Spectrum.Example\Spectrum.Example.csproj", "{694765CA-238B-4B6D-8E5C-86BBC739B856}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecDeck.Example", "examples\SpecDeck.Example\SpecDeck.Example.csproj", "{694765CA-238B-4B6D-8E5C-86BBC739B856}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

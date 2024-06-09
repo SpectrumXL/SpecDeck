@@ -1,11 +1,11 @@
 ﻿using System.Text;
 using Microsoft.CodeAnalysis;
-using Spectrum.CodeGen.ContextReceivers;
+using SpecDeck.CodeGen.ContextReceivers;
 
-namespace Spectrum.CodeGen
+namespace SpecDeck.CodeGen
 {
     /// <summary>
-    /// A source generator that generates specifications for entities marked with the SpectrumSpec attribute.
+    /// A source generator that generates specifications for entities marked with the SpecDeckSpec attribute.
     /// </summary>
     [Generator]
     public class SpecificationGenerator : ISourceGenerator
@@ -28,7 +28,7 @@ namespace Spectrum.CodeGen
             if (!(context.SyntaxContextReceiver is ContextSyntaxReceiver receiver))
                 return;
 
-            foreach (var classSymbol in receiver.SpectrumEntities)
+            foreach (var classSymbol in receiver.SpecDeckEntities)
             {
                 GenerateSpecifications(context, classSymbol);
             }
@@ -88,7 +88,7 @@ namespace Spectrum.CodeGen
             var entityNamespace = classSymbol.ContainingNamespace.ToDisplayString();
             var entityFullName = classSymbol.ToDisplayString();
 
-            sb.AppendLine("using Spectrum.Core;");
+            sb.AppendLine("using SpecDeck.Core;");
             sb.AppendLine("using System.Linq.Expressions;");
             sb.AppendLine($"using {entityNamespace};");
             sb.AppendLine();
@@ -128,7 +128,7 @@ namespace Spectrum.CodeGen
             var sb = new StringBuilder();
 
             var entityFullName = classSymbol.ToDisplayString();
-            sb.AppendLine("using Spectrum.Core;");
+            sb.AppendLine("using SpecDeck.Core;");
             sb.AppendLine("using System.Linq.Expressions;");
             sb.AppendLine();
             var entityNamespace = classSymbol.ContainingNamespace.ToDisplayString();

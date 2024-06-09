@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace Spectrum.Core
+namespace SpecDeck.Core
 {
     /// <summary>
     /// Represents a specification pattern for defining business rules.

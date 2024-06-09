@@ -1,15 +1,15 @@
-﻿namespace Spectrum
+﻿namespace SpecDeck
 {
     /// <summary>
     /// This is a marker attribute used to identify an entity to generate specifications for.
     /// </summary>
     [AttributeUsage(AttributeTargets.Class, Inherited = false)]
-    public class SpectrumSpecAttribute : Attribute
+    public class SpecDeckSpecAttribute : Attribute
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="SpectrumSpecAttribute"/> class.
+        /// Initializes a new instance of the <see cref="SpecDeckSpecAttribute"/> class.
         /// </summary>
-        public SpectrumSpecAttribute()
+        public SpecDeckSpecAttribute()
         {
         }
     }

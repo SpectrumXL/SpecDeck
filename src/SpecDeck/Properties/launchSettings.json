@@ -3,7 +3,7 @@
   "profiles": {
     "DebugRoslynSourceGenerator": {
       "commandName": "DebugRoslynComponent",
-      "targetProject": "../../examples/Spectrum.Example/Spectrum.Example.csproj"
+      "targetProject": "../../examples/SpecDeck.Example/SpecDeck.Example.csproj"
     }
   }
 }
