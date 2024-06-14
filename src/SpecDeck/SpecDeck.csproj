@@ -8,9 +8,18 @@
 
         <PackAsAnalyzer>true</PackAsAnalyzer>
         <IncludeBuildOutput>true</IncludeBuildOutput>
-        <Version>0.0.1</Version>
-        <AssemblyVersion>0.0.1</AssemblyVersion>
-        <FileVersion>0.0.1</FileVersion>
+        <Version>0.0.10</Version>
+        <AssemblyVersion>0.0.10</AssemblyVersion>
+        <FileVersion>0.0.10</FileVersion>
+        <Title>SpecDeck</Title>
+        <Authors>Vladyslav Bardin</Authors>
+        <Description>SpecDeck is a .NET library designed to simplify the implementation of the Specification pattern. It aims to provide an intuitive and minimalistic approach to defining and applying specifications in your applications, ensuring clean and maintainable code.</Description>
+        <Copyright>Copyright 2024 Vladyslav Bardin</Copyright>
+        <PackageProjectUrl>https://github.com/SpectrumXL/SpecDeck</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/SpectrumXL/SpecDeck/blob/main/LICENSE</PackageLicenseUrl>
+        <RepositoryUrl>https://github.com/SpectrumXL/SpecDeck</RepositoryUrl>
+        <PackageTags>specification;.NET;data access</PackageTags>
+        <NeutralLanguage>en-001</NeutralLanguage>
     </PropertyGroup>
 
     <ItemGroup>
