@@ -83,19 +83,10 @@ namespace SpecDeck.CodeGen
 
             foreach (var kvp in generatedClasses)
             {
-                SaveSpecificationClass(kvp);
+                _executionContext.AddSource($"{kvp.Descriptor.Name}.g.cs", kvp.Code);
             }
 
-            return generatedClasses.Keys.ToList().AsReadOnly();
-        }
-
-        /// <summary>
-        /// Saves the generated specification class to the source.
-        /// </summary>
-        /// <param name="kvp">The key-value pair containing the specification descriptor and the generated code.</param>
-        private void SaveSpecificationClass(KeyValuePair<SpecificationDescriptor, string> kvp)
-        {
-            _executionContext.AddSource($"{kvp.Key.Name}.g.cs", kvp.Value);
+            return generatedClasses.Select(x => x.Descriptor).ToList().AsReadOnly();
         }
 
         /// <summary>

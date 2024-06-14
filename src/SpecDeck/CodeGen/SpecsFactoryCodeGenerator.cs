@@ -34,7 +34,7 @@ namespace SpecDeck.CodeGen
             sb.AppendLine($"public static class {entityName}Specs");
             sb.AppendLine("{");
             sb.AppendLine(
-                $"\tpublic static Specification<{entityFullName}> All<T>() => Specification<{entityFullName}>.True;");
+                $"\tpublic static Specification<{entityFullName}> All() => Specification<{entityFullName}>.True;");
             sb.AppendLine();
 
             foreach (var descriptor in generatedSpecs)
@@ -57,9 +57,11 @@ namespace SpecDeck.CodeGen
             var args = descriptor.Args ?? Constants.NoArgs;
 
             builder.Append($"\tpublic static {descriptor.Name} {descriptor.Name}(");
-            foreach (var arg in args)
+            for (var i = 0; i < args.Count; i++)
             {
-                builder.Append($"{arg.Value} {arg.Key}");
+                builder.Append(args.ElementAt(i).Value + " " + args.ElementAt(i).Key);
+                var isLast = i == args.Count - 1;
+                if (!isLast) builder.Append(", ");
             }
 
             builder.Append(") => new(");
