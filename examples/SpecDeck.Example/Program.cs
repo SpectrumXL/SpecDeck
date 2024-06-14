@@ -1,5 +1,7 @@
 ﻿using SpecDeck.Example;
-using SpecDeck.Example.Specs.Customer;
+using static SpecDeck.Example.Specs.Customer.CustomerSpecs;
+
+
 
 var customers = new List<Customer>()
 {
@@ -17,6 +19,6 @@ var customers = new List<Customer>()
     }
 };
 
-var spec = CustomerSpecs.ByEmailSpec("jadoe@gmail.com") | CustomerSpecs.ByNameSpec("John Doe");
+var spec = EmailContainsSpec("ja") | EmailEndsWithSpec(".com");
 var result = customers.Where(spec.ToPredicate()).ToList();
 Console.WriteLine($"Matched {result.Count} customers!");

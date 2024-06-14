@@ -1,4 +1,8 @@
-﻿namespace SpecDeck.Core
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace SpecDeck.Core
 {
     /// <summary>
     /// Provides extension methods for working with specifications.

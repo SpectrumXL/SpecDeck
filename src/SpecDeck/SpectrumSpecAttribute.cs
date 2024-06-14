@@ -1,4 +1,6 @@
-﻿namespace SpecDeck
+﻿using System;
+
+namespace SpecDeck
 {
     /// <summary>
     /// This is a marker attribute used to identify an entity to generate specifications for.
