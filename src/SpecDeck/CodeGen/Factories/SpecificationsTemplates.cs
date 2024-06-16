@@ -8,9 +8,14 @@ using {0};
 
 namespace {0}.Specs.{1};
 
-public class {4}{6}Spec({3} v) : Specification<{2}>
+public class {4}{6}Spec : Specification<{2}>
 {{
-    private readonly {3} _v = v;
+    private readonly {3} _v;
+
+    public {4}{6}Spec({3} v)
+    {{
+        _v = v;
+    }}
 
     public override Expression<Func<{2}, bool>> ToExpression()
         => (t => t.{4} {5} _v);
@@ -22,10 +27,16 @@ using {0};
 
 namespace {0}.Specs.{1};
 
-public class {4}{6}Spec({3} min, {3} max) : Specification<{2}>
+public class {4}{6}Spec : Specification<{2}>
 {{
-    private readonly {3} _min = min;
-    private readonly {3} _max = max;
+    private readonly {3} _min;
+    private readonly {3} _max;
+
+    public {4}{6}Spec({3} min, {3} max)
+    {{
+        _min = min;
+        _max = max;
+    }}
 
     public override Expression<Func<{2}, bool>> ToExpression()
         => (t => t.{4} >= _min && t.{4} <= _max);
@@ -38,9 +49,14 @@ using {0};
 
 namespace {0}.Specs.{1};
 
-public class {4}{6}Spec({3} v) : Specification<{2}>
+public class {4}{6}Spec : Specification<{2}>
 {{
-	private readonly {3} _v = v;
+	private readonly {3} _v;
+
+    public {4}{6}Spec({3} v)
+    {{
+        _v = v;
+    }}
 
 	public override Expression<Func<{2}, bool>> ToExpression()
 		=> (t => t.{4}.{{method}}(_v));

@@ -2,7 +2,6 @@
 using static SpecDeck.Example.Specs.Customer.CustomerSpecs;
 
 
-
 var customers = new List<Customer>()
 {
     new()
